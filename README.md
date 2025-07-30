@@ -4,7 +4,7 @@ A comprehensive collection of specialized AI subagents for [Claude Code](https:/
 
 ## Overview
 
-This repository contains 44 specialized subagents that extend Claude Code's capabilities. Each subagent is an expert in a specific domain, automatically invoked based on context or explicitly called when needed.
+This repository contains 50 specialized subagents that extend Claude Code's capabilities. Each subagent is an expert in a specific domain, automatically invoked based on context or explicitly called when needed.
 
 ## Available Subagents
 
@@ -23,6 +23,8 @@ This repository contains 44 specialized subagents that extend Claude Code's capa
 - **[cpp-pro](cpp-pro.md)** - Write idiomatic C++ code with modern features, RAII, smart pointers, and STL algorithms
 - **[javascript-pro](javascript-pro.md)** - Master modern JavaScript with ES6+, async patterns, and Node.js APIs
 - **[sql-pro](sql-pro.md)** - Write complex SQL queries, optimize execution plans, and design normalized schemas
+- **[r-expert](r-expert.md)** - Write elegant R code with advanced features, tidyverse mastery, and performance optimization
+- **[sas-expert](sas-expert.md)** - Write efficient SAS code with advanced features and optimization techniques
 
 ### Infrastructure & Operations
 - **[devops-troubleshooter](devops-troubleshooter.md)** - Debug production issues, analyze logs, and fix deployment failures
@@ -65,6 +67,12 @@ This repository contains 44 specialized subagents that extend Claude Code's capa
 - **[content-marketer](content-marketer.md)** - Write blog posts, social media content, and email newsletters
 - **[sales-automator](sales-automator.md)** - Draft cold emails, follow-ups, and proposal templates
 - **[customer-support](customer-support.md)** - Handle support tickets, FAQ responses, and customer emails
+
+### Healthcare & Research
+- **[biostatistician](biostatistician.md)** - Expert in epidemiology and clinical research statistics, power analysis, and NEJM-standard analyses
+- **[medical-writer](medical-writer.md)** - Technical writer for top medical journals, clear study design explanations, and statistical communication
+- **[obgyn-researcher](obgyn-researcher.md)** - Women's health research expert focusing on fibroids, abortion, and delivery outcomes with clinical coding expertise
+- **[mh-policy-researcher](mh-policy-researcher.md)** - Mental health services and policy research for vulnerable populations and behavioral health integration
 
 ## Installation
 
