@@ -4,13 +4,14 @@ A comprehensive collection of specialized AI subagents for [Claude Code](https:/
 
 ## Overview
 
-This repository contains 50 specialized subagents that extend Claude Code's capabilities. Each subagent is an expert in a specific domain, automatically invoked based on context or explicitly called when needed.
+This repository contains 56 specialized subagents that extend Claude Code's capabilities. Each subagent is an expert in a specific domain, automatically invoked based on context or explicitly called when needed. All agents are configured with specific Claude models based on task complexity for optimal performance and cost-effectiveness.
 
 ## Available Subagents
 
 ### Development & Architecture
 - **[backend-architect](backend-architect.md)** - Design RESTful APIs, microservice boundaries, and database schemas
 - **[frontend-developer](frontend-developer.md)** - Build React components, implement responsive layouts, and handle client-side state management
+- **[ui-ux-designer](ui-ux-designer.md)** - Create interface designs, wireframes, and design systems
 - **[mobile-developer](mobile-developer.md)** - Develop React Native or Flutter apps with native integrations
 - **[graphql-architect](graphql-architect.md)** - Design GraphQL schemas, resolvers, and federation
 - **[architect-reviewer](architect-review.md)** - Reviews code changes for architectural consistency and patterns
@@ -22,6 +23,13 @@ This repository contains 50 specialized subagents that extend Claude Code's capa
 - **[c-pro](c-pro.md)** - Write efficient C code with proper memory management and system calls
 - **[cpp-pro](cpp-pro.md)** - Write idiomatic C++ code with modern features, RAII, smart pointers, and STL algorithms
 - **[javascript-pro](javascript-pro.md)** - Master modern JavaScript with ES6+, async patterns, and Node.js APIs
+- **[typescript-pro](typescript-pro.md)** - Master TypeScript with advanced types, generics, and strict type safety
+- **[php-pro](php-pro.md)** - Write idiomatic PHP code with modern features and performance optimizations
+- **[java-pro](java-pro.md)** - Master modern Java with streams, concurrency, and JVM optimization
+- **[elixir-pro](elixir-pro.md)** - Write idiomatic Elixir code with OTP patterns, functional programming, and Phoenix frameworks
+- **[csharp-pro](csharp-pro.md)** - Write modern C# code with advanced features and .NET optimization
+- **[unity-developer](unity-developer.md)** - Build Unity games with optimized scripts and performance tuning
+- **[ios-developer](ios-developer.md)** - Develop native iOS applications with Swift/SwiftUI
 - **[sql-pro](sql-pro.md)** - Write complex SQL queries, optimize execution plans, and design normalized schemas
 - **[r-expert](r-expert.md)** - Write elegant R code with advanced features, tidyverse mastery, and performance optimization
 - **[sas-expert](sas-expert.md)** - Write efficient SAS code with advanced features and optimization techniques
@@ -38,7 +46,7 @@ This repository contains 50 specialized subagents that extend Claude Code's capa
 - **[dx-optimizer](dx-optimizer.md)** - Developer Experience specialist that improves tooling, setup, and workflows
 
 ### Quality & Security
-- **[code-reviewer](code-reviewer.md)** - Expert code review for quality, security, and maintainability
+- **[code-reviewer](code-reviewer.md)** - Expert code review with deep configuration security focus and production reliability
 - **[security-auditor](security-auditor.md)** - Review code for vulnerabilities and ensure OWASP compliance
 - **[test-automator](test-automator.md)** - Create comprehensive test suites with unit, integration, and e2e tests
 - **[performance-engineer](performance-engineer.md)** - Profile applications, optimize bottlenecks, and implement caching strategies
@@ -61,6 +69,11 @@ This repository contains 50 specialized subagents that extend Claude Code's capa
 - **[risk-manager](risk-manager.md)** - Monitor portfolio risk, R-multiples, and position limits
 - **[legacy-modernizer](legacy-modernizer.md)** - Refactor legacy codebases and implement gradual modernization
 - **[context-manager](context-manager.md)** - Manages context across multiple agents and long-running tasks
+
+### Documentation
+- **[docs-architect](docs-architect.md)** - Creates comprehensive technical documentation from existing codebases
+- **[reference-builder](reference-builder.md)** - Creates exhaustive technical references and API documentation
+- **[tutorial-engineer](tutorial-engineer.md)** - Creates step-by-step tutorials and educational content from code
 
 ### Business & Marketing
 - **[business-analyst](business-analyst.md)** - Analyze metrics, create reports, and track KPIs
@@ -102,6 +115,7 @@ Mention the subagent by name in your request:
 ```bash
 # Code quality and review
 "Use code-reviewer to analyze this component for best practices"
+"Have code-reviewer scrutinize these configuration changes"
 "Have security-auditor check for OWASP compliance issues"
 
 # Development tasks  
@@ -185,11 +199,27 @@ Each subagent follows this structure:
 ---
 name: subagent-name
 description: When this subagent should be invoked
+model: haiku  # Optional - specify which model to use (haiku/sonnet/opus)
 tools: tool1, tool2  # Optional - defaults to all tools
 ---
 
 System prompt defining the subagent's role and capabilities
 ```
+
+### Model Configuration
+
+As of Claude Code v1.0.64, subagents can specify which Claude model they should use. This allows for cost-effective task delegation based on complexity:
+
+- **Low Complexity (Haiku)**: Simple tasks like basic data analysis, documentation generation, and standard responses
+- **Medium Complexity (Sonnet)**: Development tasks, code review, testing, and standard engineering work  
+- **High Complexity (Opus)**: Critical tasks like security auditing, architecture review, incident response, and AI/ML engineering
+
+Available models (using simplified naming as of Claude Code v1.0.64):
+- `haiku` - Fast and cost-effective for simple tasks
+- `sonnet` - Balanced performance for most development work
+- `opus` - Most capable for complex analysis and critical tasks
+
+If no model is specified, the subagent will use the system's default model.
 
 ## Agent Orchestration Patterns
 
@@ -232,6 +262,7 @@ payment-integration → security-auditor → Validated implementation
 ### 🏗️ Planning & Architecture
 - **backend-architect**: API design, database schemas, system architecture
 - **frontend-developer**: UI/UX planning, component architecture
+- **ui-ux-designer**: Interface design, wireframes, design systems, user research
 - **cloud-architect**: Infrastructure design, scalability planning
 
 ### 🔧 Implementation & Development  
@@ -240,6 +271,12 @@ payment-integration → security-auditor → Validated implementation
 - **rust-pro**: Rust-specific development, memory safety, systems programming
 - **c-pro**: C programming, embedded systems, performance-critical code
 - **javascript-pro**: Modern JavaScript, async patterns, Node.js/browser code
+- **typescript-pro**: Advanced TypeScript, generics, type inference, enterprise patterns
+- **java-pro**: Modern Java development, streams, concurrency, Spring Boot
+- **elixir-pro**: Elixir development, OTP patterns, Phoenix frameworks, functional programming
+- **csharp-pro**: Modern C# development, .NET frameworks, enterprise patterns
+- **unity-developer**: Unity game development, C# scripting, performance optimization
+- **ios-developer**: Native iOS development with Swift/SwiftUI
 - **sql-pro**: Database queries, schema design, query optimization
 - **mobile-developer**: React Native/Flutter development
 
@@ -258,11 +295,17 @@ payment-integration → security-auditor → Validated implementation
 - **mlops-engineer**: ML infrastructure, experiment tracking, model registries, pipeline automation
 
 ### 🧪 Quality Assurance
-- **code-reviewer**: Code quality, maintainability review
+- **code-reviewer**: Code quality, configuration security, production reliability
 - **test-automator**: Test strategy, test suite creation
 - **debugger**: Bug investigation, error resolution
 - **error-detective**: Log analysis, error pattern recognition, root cause analysis
 - **search-specialist**: Deep web research, competitive analysis, fact-checking
+
+### 📚 Documentation
+- **api-documenter**: OpenAPI/Swagger specs, API documentation
+- **docs-architect**: Comprehensive technical documentation, architecture guides, system manuals
+- **reference-builder**: Exhaustive API references, configuration guides, parameter documentation
+- **tutorial-engineer**: Step-by-step tutorials, learning paths, educational content
 
 ### 💼 Business & Strategy
 - **business-analyst**: KPIs, revenue models, growth projections, investor metrics
@@ -270,6 +313,7 @@ payment-integration → security-auditor → Validated implementation
 - **content-marketer**: SEO content, blog posts, social media, email campaigns
 - **sales-automator**: Cold emails, follow-ups, proposals, lead nurturing
 - **customer-support**: Support tickets, FAQs, help documentation, troubleshooting
+- **legal-advisor** - Draft privacy policies, terms of service, disclaimers, and legal notices 
 
 ## Best Practices
 
@@ -328,6 +372,10 @@ If agents aren't working as expected:
 2. Try more specific language in your requests
 3. Use explicit invocation to test specific agents
 4. Provide more context about your project and goals
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Learn More
 
